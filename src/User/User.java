@@ -29,6 +29,7 @@ public class User {
         }
     }
 
+
     //Осуществить вывод с комиссией
     public void withdraw(double amount){
         //Метод позволяющий выводить средства
