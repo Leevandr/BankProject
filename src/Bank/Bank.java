@@ -25,8 +25,32 @@ public class Bank {
 
             }
             System.out.println("Deposited " + amount + " $ on " + accountNumber + " failure!");
-            System.out.println("Not found Account Number!");
+            return;
         }
+        System.out.println("Not found Account Number!");
+    }
+
+    public void withdraw(int accountNumber, double amount){
+        for (User user : users){
+            if (user.getAccountNumber() == accountNumber){
+                user.withdraw(amount);
+                System.out.println("Withdraw " + amount + " $ from " + accountNumber + " sucsess!");
+
+            }
+            System.out.println("Withdraw " + amount + " $ from " + accountNumber + " failure!");
+            return;
+        }
+        System.out.println("Not found Account Number!");
+    }
+
+    public void displayUserInfo(int accountNumber){
+        for (User user : users){
+            if (user.getAccountNumber() == accountNumber){
+                user.displayInfo();
+                return;
+            }
+        }
+        System.out.println("User not found!");
     }
 
 
