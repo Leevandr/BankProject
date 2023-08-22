@@ -31,33 +31,32 @@ public class User {
 
 
     //Осуществить вывод с комиссией
-    public void withdraw(double amount){
+    public void withdraw(double amount) {
         //Метод позволяющий выводить средства
-        if (amount > 0 ) {
+        if (amount > 0) {
             balance -= amount;
             System.out.println("Sucsess!");
             System.out.println("You withdraw " + amount + "$ from your balance");
-        }else {
+        } else {
             System.out.println("Failure!");
             System.out.println("Invalid amount");
         }
     }
     //Реализовать передачу денег на другой аккаунт
 
-    public double getBalance(){
+    public double getBalance() {
         return balance;
     }
 
-    public int getAccountNumber(){
+    public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void displayInfo(){
+    public void displayInfo() {
         System.out.println("Firstname: " + firstName);
         System.out.println("Lastname: " + lastName);
         System.out.println("Age: " + age);
     }
-
 
 
 }
