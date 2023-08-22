@@ -46,11 +46,15 @@ public class User {
     public double getBalance(){
         return balance;
     }
+
+    public int getAccountNumber(){
+        return accountNumber;
+    }
+
     public void displayInfo(){
         System.out.println("Firstname: " + firstName);
         System.out.println("Lastname: " + lastName);
         System.out.println("Age: " + age);
-
     }
 
 
