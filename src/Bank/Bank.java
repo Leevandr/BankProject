@@ -22,6 +22,7 @@ public class Bank {
             if (user.getAccountNumber() == accountNumber){
                 user.deposite(amount);
                 System.out.println("Deposited " + amount + " $ on " + accountNumber + " sucsess!");
+                return;
 
             }
             System.out.println("Deposited " + amount + " $ on " + accountNumber + " failure!");
@@ -35,6 +36,7 @@ public class Bank {
             if (user.getAccountNumber() == accountNumber){
                 user.withdraw(amount);
                 System.out.println("Withdraw " + amount + " $ from " + accountNumber + " sucsess!");
+                return;
 
             }
             System.out.println("Withdraw " + amount + " $ from " + accountNumber + " failure!");
