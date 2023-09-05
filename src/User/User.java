@@ -23,10 +23,8 @@ public class User {
         //Метод дающий депозит
         if (amount > 0) {
             balance += amount;
-            System.out.println("Sucsess!");
             System.out.println("You deposit " + amount + "$ on your balance");
         } else {
-            System.out.println("Failure!");
             System.out.println("Invalid amount");
         }
     }
@@ -37,10 +35,8 @@ public class User {
         //Метод позволяющий выводить средства
         if (amount > 0) {
             balance -= amount;
-            System.out.println("Sucsess!");
             System.out.println("You withdraw " + amount + "$ from your balance");
         } else {
-            System.out.println("Failure!");
             System.out.println("Invalid amount");
         }
     }

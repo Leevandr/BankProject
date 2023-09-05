@@ -1,10 +1,12 @@
 import Bank.Bank;
+import Exceptions.InvalidAccountNumberException;
+import Exceptions.UserAccountNotNull;
 import User.User;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidAccountNumberException, UserAccountNotNull {
         Bank bank = new Bank();
 
         User user1 = new User("Poal", "Smith", 32, 14322, 643.0);

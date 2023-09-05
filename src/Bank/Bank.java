@@ -25,32 +25,38 @@ public class Bank {
     }
 
     public void deposit(int accountNumber, double amount) throws InvalidAccountNumberException {
+        boolean accountFound = false;
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.deposite(amount);
-                System.out.println("Deposited " + amount + " $ on " + accountNumber + " sucsess!");
-                return;
-
+                System.out.println("Deposited " + amount + " $ on " + accountNumber + " success!");
+                accountFound = true;
+                break;
             }
-            System.out.println("Deposited " + amount + " $ on " + accountNumber + " failure!");
-            return;
         }
-        System.out.println("Not found Account Number!");
+        if (!accountFound) {
+            System.out.println("Account number " + accountNumber + " not found!");
+            throw new InvalidAccountNumberException("Account not found");
+        }
     }
 
+
     public void withdraw(int accountNumber, double amount) throws InvalidAccountNumberException {
+        boolean accountFound = false;
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.withdraw(amount);
                 System.out.println("Withdraw " + amount + " $ from " + accountNumber + " sucsess!");
-                return;
+                accountFound = true;
+                break;
 
             }
-            System.out.println("Withdraw " + amount + " $ from " + accountNumber + " failure!");
-            return;
         }
-        System.out.println("Not found Account Number!");
-    }
+            if (!accountFound) {
+                System.out.println("Account number " + accountNumber + " not found!");
+                throw new InvalidAccountNumberException("Account not found");
+            }
+        }
 
     public void displayUserInfo(int accountNumber) throws InvalidAccountNumberException {
         for (User user : users) {
