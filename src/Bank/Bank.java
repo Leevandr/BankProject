@@ -16,6 +16,15 @@ public class Bank {
         users = new ArrayList<>();
     }
 
+    public void displayAllUsers(){
+        System.out.println("List of all users:");
+        for (User user : users) {
+            user.displayInfo();
+            System.out.println("--------------");
+        }
+
+    }
+
     public void addUser(User user) throws UserAccountNotNull {
         if (user == null) {
             throw new UserAccountNotNull("Имя не должно быть пустым!");
@@ -46,7 +55,7 @@ public class Bank {
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.withdraw(amount);
-                System.out.println("Withdraw " + amount + " $ from " + accountNumber + " sucsess!");
+                System.out.println("Withdraw " + amount + " $ from " + accountNumber);
                 accountFound = true;
                 break;
 
