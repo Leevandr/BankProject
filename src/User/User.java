@@ -1,5 +1,7 @@
 package User;
 
+import Exceptions.InvalidAccountNumberException;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -48,8 +50,12 @@ public class User {
         return balance;
     }
 
-    public int getAccountNumber() {
-        return accountNumber;
+    public int getAccountNumber() throws InvalidAccountNumberException {
+        if (accountNumber <= 0) {
+            throw new InvalidAccountNumberException("Номер счета меньше или равен нулю");
+        }else {
+            return accountNumber;
+        }
     }
 
     public void displayInfo() {

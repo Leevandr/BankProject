@@ -1,5 +1,7 @@
 package Bank;
 
+import Exceptions.InvalidAccountNumberException;
+import Exceptions.UserAccountNotNull;
 import User.User;
 
 
@@ -14,11 +16,15 @@ public class Bank {
         users = new ArrayList<>();
     }
 
-    public void addUser(User user) {
-        users.add(user);
+    public void addUser(User user) throws UserAccountNotNull {
+        if (user == null) {
+            throw new UserAccountNotNull("Имя не должно быть пустым!");
+        }else {
+            users.add(user);
+        }
     }
 
-    public void deposit(int accountNumber, double amount) {
+    public void deposit(int accountNumber, double amount) throws InvalidAccountNumberException {
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.deposite(amount);
@@ -32,7 +38,7 @@ public class Bank {
         System.out.println("Not found Account Number!");
     }
 
-    public void withdraw(int accountNumber, double amount) {
+    public void withdraw(int accountNumber, double amount) throws InvalidAccountNumberException {
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.withdraw(amount);
@@ -46,7 +52,7 @@ public class Bank {
         System.out.println("Not found Account Number!");
     }
 
-    public void displayUserInfo(int accountNumber) {
+    public void displayUserInfo(int accountNumber) throws InvalidAccountNumberException {
         for (User user : users) {
             if (user.getAccountNumber() == accountNumber) {
                 user.displayInfo();
